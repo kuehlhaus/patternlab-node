@@ -6,14 +6,10 @@ var diveSync = require('diveSync');
 const chalk = require('chalk');
 var engineMatcher = /^patternengine-node-(.*)$/;
 var enginesDirectories = [
-  {
-    displayName: 'the core',
-    path: path.resolve(__dirname, '..', '..', 'node_modules')
-  },
-  {
-    displayName: 'the edition or test directory',
-    path: path.join(process.cwd(), 'node_modules')
-  }
+    {
+      displayName: 'the core',
+      path: path.join(process.cwd(), '..', '..', 'node_modules')
+    }
 ];
 var PatternEngines; // the main export object
 var engineNameForExtension; // generated mapping of extension to engine name
