@@ -247,9 +247,9 @@ var pattern_assembler = function () {
   }
 
   function processPatternIterative(relPath, patternlab) {
-
+    var depth = patternlab.config.directoryDepth || 2;
     var relativeDepth = (relPath.match(/\w(?=\\)|\w(?=\/)/g) || []).length;
-    if (relativeDepth > 2) {
+    if (relativeDepth > depth) {
       console.log('');
       plutils.warning('Warning:');
       plutils.warning('A pattern file: ' + relPath + ' was found greater than 2 levels deep from ' + patternlab.config.paths.source.patterns + '.');
