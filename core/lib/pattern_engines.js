@@ -3,12 +3,13 @@
 
 var path = require('path');
 var diveSync = require('diveSync');
+var findNodeModules = require('find-node-modules');
 const chalk = require('chalk');
 var engineMatcher = /^patternengine-node-(.*)$/;
 var enginesDirectories = [
     {
       displayName: 'the core',
-      path: path.join(process.cwd(), '..', '..', 'node_modules')
+      path: path.join(process.cwd(), findNodeModules()[0])
     }
 ];
 var PatternEngines; // the main export object
